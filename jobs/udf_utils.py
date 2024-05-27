@@ -142,5 +142,6 @@ def extract_application_location(file_content):
         application_location_match = re.search(r'(Applications? will only be accepted on-?line.)', file_content, re.IGNORECASE)
         application_location = 'Online' if application_location_match else 'Mail or In person'
 
+        return application_location
     except Exception as e:
         raise ValueError(f'Error extracting application location: {e}')
